@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181D3C6C1A3197E600B62496 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181D3C6B1A3197E600B62496 /* AVFoundation.framework */; };
 		188D17B61A22C4DB00D4CB1B /* Eight-Note-256.png in Resources */ = {isa = PBXBuildFile; fileRef = 188D17AB1A22C4DB00D4CB1B /* Eight-Note-256.png */; };
 		188D17B71A22C4DB00D4CB1B /* Media-Pause-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 188D17AC1A22C4DB00D4CB1B /* Media-Pause-48.png */; };
 		188D17B81A22C4DB00D4CB1B /* Media-Play-256.png in Resources */ = {isa = PBXBuildFile; fileRef = 188D17AD1A22C4DB00D4CB1B /* Media-Play-256.png */; };
@@ -79,6 +80,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		181D3C6B1A3197E600B62496 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		1860849A1A21BE760016950F /* ahh.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = ahh.raw; sourceTree = "<group>"; };
 		1860849B1A21BE760016950F /* bassdrum.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = bassdrum.raw; sourceTree = "<group>"; };
 		1860849C1A21BE760016950F /* britestk.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = britestk.raw; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				181D3C6C1A3197E600B62496 /* AVFoundation.framework in Frameworks */,
 				188D17C41A22CB6D00D4CB1B /* CoreMotion.framework in Frameworks */,
 				B0A661EF1927316F0064C7EC /* libTheAmazingAudioEngine.a in Frameworks */,
 				B0A661EE1927313B0064C7EC /* libSTK.a in Frameworks */,
@@ -287,6 +290,7 @@
 		B097DD65186E760B00884E69 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				181D3C6B1A3197E600B62496 /* AVFoundation.framework */,
 				188D17C31A22CB6C00D4CB1B /* CoreMotion.framework */,
 				B097DDA4186E770B00884E69 /* Accelerate.framework */,
 				B097DDA5186E770B00884E69 /* AudioToolbox.framework */,

@@ -7,10 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ViewController : UIViewController{
-    
+#import <AVFoundation/AVFoundation.h>
+@interface ViewController : UIViewController <AVAudioRecorderDelegate>{
+    BOOL recording;
 }
-
-
 @end

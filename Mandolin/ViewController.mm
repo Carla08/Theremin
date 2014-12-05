@@ -16,27 +16,36 @@
 #import "AppDelegate.h"
 //Core Motion:
 #import <CoreMotion/CoreMotion.h>
-//Amazing audio engine and STK instrument (BeeThree)
+//Amazing audio engine and STK instrument (BeeThree) and AVFoundation for recording.
 #import "BeeThree.h"
 #import "AEBlockChannel.h"
+#import <AVFoundation/AVFoundation.h>
+
+#define degrees(x) (180*x/M_PI)
+// PARA DOS ESCALAS: #define frequency(x) (2.074666*x +261.62)
+// PARA UNA ESCALA:
+#define frequency(x) (1.037333*x +261.62)
 
 @implementation ViewController {
-    //Set Audio and STK's BeeThree:
+    //Set Amazing Audio engine and STK's BeeThree and AVFoundation recorder:
     AEBlockChannel *myBeeThreeChannel;
     stk::BeeThree *myBeeThree;
-    //Outlets (Debugging purpuses):
-    IBOutlet UISlider *slider;//changes frecuency
-    IBOutlet UILabel *x_acc;//Indicator
-    IBOutlet UILabel *y_acc;//Indicator
-    IBOutlet UILabel *z_acc;//Indicator
+      AVAudioRecorder *recorder;
     //Declaring Motion Manager:
     CMMotionManager *manager;
+    
+    /**Outlets (Debugging purpuses):
+    IBOutlet UISlider *slider;//changes frecuency
+    IBOutlet UILabel *x_acc;//Indicator
+    IBOutlet UILabel *y_acc;//Indicator **/
+    IBOutlet UILabel *z_acc;//Indicator
+    
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //Audio Setup:
+    //Amazing Audio and STK Setup:
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
 
     NSError *errorAudioSetup = NULL;
@@ -66,25 +75,79 @@
     //Motion Manager set up:
     manager = [[CMMotionManager alloc] init];
     [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(getValues:) userInfo:nil repeats:YES];
-    manager.accelerometerUpdateInterval = 0.05;  // 20 Hz
-    [manager startAccelerometerUpdates];
+    manager.deviceMotionUpdateInterval = 0.05; // 20 Hz
+    [manager startDeviceMotionUpdates];
+    
+    
+    //AVFoundation Recorder Set Up:
+    NSArray *pathComponents = [NSArray arrayWithObjects:
+                               [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],
+                               @"MyAudioMemo.m4a",
+                               nil];
+    NSURL *outputFileURL = [NSURL fileURLWithPathComponents:pathComponents];
+    
+    // Setup audio session
+    AVAudioSession *session = [AVAudioSession sharedInstance];
+    [session setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
+    
+    // Define the recorder setting
+    NSMutableDictionary *recordSetting = [[NSMutableDictionary alloc] init];
+    
+    [recordSetting setValue:[NSNumber numberWithInt:kAudioFormatMPEG4AAC] forKey:AVFormatIDKey];
+    [recordSetting setValue:[NSNumber numberWithFloat:44100.0] forKey:AVSampleRateKey];
+    [recordSetting setValue:[NSNumber numberWithInt: 2] forKey:AVNumberOfChannelsKey];
+    
+    // Initiate and prepare the recorder
+    recorder = [[AVAudioRecorder alloc] initWithURL:outputFileURL settings:recordSetting error:NULL];
+    recorder.delegate = self;
+    recorder.meteringEnabled = YES;
+    [recorder prepareToRecord];
+    recording=false;
 }
 //Motion Manager callback for polling acc data:
 -(void) getValues:(NSTimer *) timer {
-    x_acc.text = [NSString stringWithFormat:@"%.2f",manager.accelerometerData.acceleration.x];
-    y_acc.text = [NSString stringWithFormat:@"%.2f",manager.accelerometerData.acceleration.y];
-    z_acc.text = [NSString stringWithFormat:@"%.2f",manager.accelerometerData.acceleration.z];
-   
+  //OUTLETS OF DEBBUG
+   /** x_acc.text = [NSString stringWithFormat:@"%.2f",degrees(manager.deviceMotion.attitude.pitch)];
+    y_acc.text = [NSString stringWithFormat:@"%.2f",degrees(manager.deviceMotion.attitude.yaw)];**/
+    z_acc.text = [NSString stringWithFormat:@"%.2f",degrees(manager.deviceMotion.attitude.roll)];
+    [self ChangeNote:frequency(degrees(manager.deviceMotion.attitude.roll))];
 }
 
-- (IBAction)changeFrequency:(UISlider *)sender {
+/*- (IBAction)changeFrequency:(UISlider *)sender {
     myBeeThree->setFrequency(sender.value);
+}*/
+
+-(void)ChangeNote: (float)freq  {
+    myBeeThree->setFrequency(freq);
 }
+
 - (IBAction)PlayTheremin:(id)sender {
-    myBeeThree->noteOn(slider.value, 0.5);
+    myBeeThree->noteOn(0, 0.5);
 }
 - (IBAction)StopTheremin:(id)sender {
     myBeeThree->noteOff(0.5);
+}
+- (IBAction)Record:(id)sender {
+    if ((!recorder.recording)&&(recording==false)) {
+        recording=true;
+        AVAudioSession *session = [AVAudioSession sharedInstance];
+        [session setActive:YES error:nil];
+        
+        // Start recording
+        [recorder record];
+        
+    } else {
+        
+        // Pause recording
+        [recorder stop];
+        AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+        [audioSession setActive:NO error:nil];
+        recording=false;
+    }
+}
+- (void) audioRecorderDidFinishRecording:(AVAudioRecorder *)avrecorder successfully:(BOOL)flag{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Done" message: @"Name your masterpiece:" delegate: nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
 }
 
 @end
