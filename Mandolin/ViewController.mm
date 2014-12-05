@@ -85,6 +85,10 @@
                                [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],
                                @"MyAudioMemo.m4a",
                                nil];
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+
     NSURL *outputFileURL = [NSURL fileURLWithPathComponents:pathComponents];
     
     // Setup audio session
@@ -166,9 +170,13 @@
         UITextField *txtView= [alertView textFieldAtIndex:0];
         NSString *track_name= txtView.text;
         track_name= [track_name stringByAppendingString:@".m4a"];
+        
+        NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+        NSString *filepathInitial = [documentsPath stringByAppendingPathComponent:@"MyAudioMemo.m4a"];
+        NSString *filepathDestination = [documentsPath stringByAppendingPathComponent:track_name];
         NSFileManager * fm = [[NSFileManager alloc] init];
         NSError * err = NULL;
-        [fm moveItemAtPath:@"MyAudioMemo.m4a" toPath:track_name error:&err];
+        [fm moveItemAtPath:filepathInitial toPath:filepathDestination error:&err];
         [tracks addObject:track_name];
         [pref setObject: tracks forKey:@"allTracks"];
         [pref synchronize];
@@ -185,7 +193,7 @@
     if([segue.identifier isEqualToString:@"PlayVC"]){
         NSLog(@"YEAH BABE");
         PlayVC *playVC=( PlayVC * ) segue.destinationViewController;
-       // playVC.songUrl=recorder.url;
+       playVC.songUrl=recorder.url;
         playVC.tracks=tracks;
     }
     

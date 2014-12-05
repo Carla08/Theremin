@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import "TrackCell.h"
 
 @interface PlayVC : UIViewController <AVAudioRecorderDelegate, AVAudioPlayerDelegate,UITableViewDataSource, UITableViewDelegate>{
-    
-    IBOutlet UITableView *TableView;
 }
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @property NSURL *songUrl;
 @property NSMutableArray *tracks;

@@ -19,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+  //  [self.tableView registerNib:[UINib nibWithNibName:@"TrackCell" bundle:nil ] forCellReuseIdentifier:@"TrackCellType"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,6 +40,7 @@
 - (IBAction)PlaySong:(id)sender {
     
     player = [[AVAudioPlayer alloc] initWithContentsOfURL:_songUrl error:nil];
+    NSLog(@"%@",self.songUrl);
     [player setDelegate:self];
     [player play];
 }
@@ -60,10 +62,9 @@
 }
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [[UITableViewCell alloc] init];
-    
-    cell.textLabel.text = [self.tracks objectAtIndex:indexPath.row];
-    
+    //UITableViewCell *cell = [[UITableViewCell alloc] init];
+    TrackCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TrackCellType" forIndexPath:indexPath];
+    cell.track_name.text = [self.tracks objectAtIndex:indexPath.row];
     return cell;
 }
 @end
