@@ -20,6 +20,7 @@
 #import "BeeThree.h"
 #import "AEBlockChannel.h"
 #import <AVFoundation/AVFoundation.h>
+#import "PlayVC.h"
 
 #define degrees(x) (180*x/M_PI)
 // PARA DOS ESCALAS: #define frequency(x) (2.074666*x +261.62)
@@ -103,6 +104,13 @@
     recorder.meteringEnabled = YES;
     [recorder prepareToRecord];
     recording=false;
+    
+    
+    //Variables and Arrays:
+    tracks= nil;
+    [self restore];
+  
+    
 }
 //Motion Manager callback for polling acc data:
 -(void) getValues:(NSTimer *) timer {
@@ -146,8 +154,41 @@
     }
 }
 - (void) audioRecorderDidFinishRecording:(AVAudioRecorder *)avrecorder successfully:(BOOL)flag{
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Done" message: @"Name your masterpiece:" delegate: nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Done" message: @"Name your masterpiece:" delegate: self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK",nil];
+    [alert setAlertViewStyle:UIAlertViewStylePlainTextInput];
     [alert show];
+}
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    NSLog(@"Entrando al metodo del alert view");
+    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
+    if([title isEqualToString:@"OK"]){
+        NSUserDefaults *pref= [NSUserDefaults standardUserDefaults];
+        UITextField *txtView= [alertView textFieldAtIndex:0];
+        NSString *track_name= txtView.text;
+        track_name= [track_name stringByAppendingString:@".m4a"];
+        NSFileManager * fm = [[NSFileManager alloc] init];
+        NSError * err = NULL;
+        [fm moveItemAtPath:@"MyAudioMemo.m4a" toPath:track_name error:&err];
+        [tracks addObject:track_name];
+        [pref setObject: tracks forKey:@"allTracks"];
+        [pref synchronize];
+    }
+    }
+
+-(void) restore {
+    NSUserDefaults *pref= [NSUserDefaults standardUserDefaults];
+    tracks=[[NSMutableArray alloc] initWithArray:[pref objectForKey:@"allTracks"]];
+    
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"PlayVC"]){
+        NSLog(@"YEAH BABE");
+        PlayVC *playVC=( PlayVC * ) segue.destinationViewController;
+       // playVC.songUrl=recorder.url;
+        playVC.tracks=tracks;
+    }
+    
 }
 
 @end

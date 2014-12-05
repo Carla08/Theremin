@@ -40,6 +40,9 @@
                                 <state key="normal" image="Eight-Note-256.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="gmC-jw-EKn" kind="modal" identifier="PlayVC" id="Qtl-cM-GD8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pu8-9d-PTR">
                                 <rect key="frame" x="127" y="411" width="66" height="61"/>
@@ -72,6 +75,58 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--PlayVC-->
+        <scene sceneID="ikX-LD-aBt">
+            <objects>
+                <viewController id="gmC-jw-EKn" customClass="PlayVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VO1-dI-Psg"/>
+                        <viewControllerLayoutGuide type="bottom" id="dLq-w6-ueS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GTg-Uy-03r">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OFK-SP-oDj">
+                                <rect key="frame" x="26" y="442" width="46" height="30"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleColor" red="0.60202088649999996" green="0.28807263389999999" blue="0.34725152619999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="PlaySong:" destination="gmC-jw-EKn" eventType="touchUpInside" id="z88-2o-tiJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdX-dt-zqR">
+                                <rect key="frame" x="16" y="7" width="46" height="30"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backToListVC:" destination="gmC-jw-EKn" eventType="touchUpInside" id="Xe3-i7-c6T"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qnA-8D-0wQ">
+                                <rect key="frame" x="0.0" y="45" width="320" height="384"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="gmC-jw-EKn" id="E9x-3H-xaS"/>
+                                    <outlet property="delegate" destination="gmC-jw-EKn" id="k60-B7-ulZ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.89152712560000003" blue="0.83246121660000005" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="jmk-WI-5Kq"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="TableView" destination="qnA-8D-0wQ" id="BqL-U8-xhO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X2g-JX-wCE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="764" y="233"/>
         </scene>
     </scenes>
     <resources>

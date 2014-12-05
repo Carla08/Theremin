@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
-@interface ViewController : UIViewController <AVAudioRecorderDelegate>{
+#import "PlayVC.h"
+
+@interface ViewController : UIViewController <AVAudioRecorderDelegate, UIAlertViewDelegate>{
     BOOL recording;
+    NSMutableArray *tracks;
 }
 @end

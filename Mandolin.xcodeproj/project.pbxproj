@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		181D3C6C1A3197E600B62496 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181D3C6B1A3197E600B62496 /* AVFoundation.framework */; };
+		181D3C771A31AD2D00B62496 /* PlayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 181D3C761A31AD2D00B62496 /* PlayVC.m */; };
 		188D17B61A22C4DB00D4CB1B /* Eight-Note-256.png in Resources */ = {isa = PBXBuildFile; fileRef = 188D17AB1A22C4DB00D4CB1B /* Eight-Note-256.png */; };
 		188D17B71A22C4DB00D4CB1B /* Media-Pause-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 188D17AC1A22C4DB00D4CB1B /* Media-Pause-48.png */; };
 		188D17B81A22C4DB00D4CB1B /* Media-Play-256.png in Resources */ = {isa = PBXBuildFile; fileRef = 188D17AD1A22C4DB00D4CB1B /* Media-Play-256.png */; };
@@ -81,6 +82,8 @@
 
 /* Begin PBXFileReference section */
 		181D3C6B1A3197E600B62496 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		181D3C751A31AD2D00B62496 /* PlayVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayVC.h; sourceTree = "<group>"; };
+		181D3C761A31AD2D00B62496 /* PlayVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayVC.m; sourceTree = "<group>"; };
 		1860849A1A21BE760016950F /* ahh.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = ahh.raw; sourceTree = "<group>"; };
 		1860849B1A21BE760016950F /* bassdrum.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = bassdrum.raw; sourceTree = "<group>"; };
 		1860849C1A21BE760016950F /* britestk.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = britestk.raw; sourceTree = "<group>"; };
@@ -312,6 +315,8 @@
 				B08E935D186F7A6F00E8354C /* ViewController.mm */,
 				B097DD7E186E760B00884E69 /* Images.xcassets */,
 				B097DD6D186E760B00884E69 /* Supporting Files */,
+				181D3C751A31AD2D00B62496 /* PlayVC.h */,
+				181D3C761A31AD2D00B62496 /* PlayVC.m */,
 			);
 			path = Mandolin;
 			sourceTree = "<group>";
@@ -508,6 +513,7 @@
 			files = (
 				B097DD77186E760B00884E69 /* AppDelegate.m in Sources */,
 				B097DD73186E760B00884E69 /* main.m in Sources */,
+				181D3C771A31AD2D00B62496 /* PlayVC.m in Sources */,
 				B08E935E186F7A6F00E8354C /* ViewController.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
