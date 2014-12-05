@@ -9,19 +9,44 @@
 #import "PlayVC.h"
 
 @interface PlayVC (){
-    AVAudioPlayer *player;
 }
 
 @end
 
-@implementation PlayVC
+@implementation PlayVC{
+
+}
+
+NSTimer *timer;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
   //  [self.tableView registerNib:[UINib nibWithNibName:@"TrackCell" bundle:nil ] forCellReuseIdentifier:@"TrackCellType"];
+    
+
+    
 }
 
+-(void)startProgress{
+        self.progress= [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
+    self.progress.progress=0.0;
+        timer=[NSTimer scheduledTimerWithTimeInterval:(0.1) target:self selector:@selector(SliderPlay) userInfo:nil repeats:YES];
+   
+
+}
+-(void)SliderPlay{
+    
+    [self performSelectorOnMainThread:@selector(updateUI) withObject:nil waitUntilDone:YES];
+    if(self.player==nil){
+        [timer invalidate];
+    }
+}
+
+-(void)updateUI{
+    //[self.progress setProgress:(float)self.player.currentTime/(float)self.player.duration animated:YES];
+    self.progress.progress=(float)self.player.currentTime/(float)self.player.duration;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -37,22 +62,19 @@
 }
 */
 
-- (IBAction)PlaySong:(id)sender {
+/*- (IBAction)PlaySong:(id)sender {
     
     player = [[AVAudioPlayer alloc] initWithContentsOfURL:_songUrl error:nil];
     NSLog(@"%@",self.songUrl);
     [player setDelegate:self];
     [player play];
-}
+}*/
 
 - (IBAction)backToListVC:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void) audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Done"message: @"Finish playing the recording!"delegate: nil cancelButtonTitle:@"OK"otherButtonTitles:nil];
-    [alert show];
-}
+
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }

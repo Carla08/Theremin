@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import "PlayVC.h"
+#import <FacebookSDK/FacebookSDK.h>
 
 @interface TrackCell : UITableViewCell <AVAudioPlayerDelegate>
 @property (strong, nonatomic) NSURL *track;

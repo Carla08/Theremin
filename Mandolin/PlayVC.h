@@ -13,10 +13,16 @@
 @interface PlayVC : UIViewController <AVAudioRecorderDelegate, AVAudioPlayerDelegate,UITableViewDataSource, UITableViewDelegate>{
 }
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UILabel *start;
+@property (strong, nonatomic) IBOutlet UILabel *end;
+@property (strong, nonatomic) IBOutlet UIProgressView *progress;
+@property (strong, nonatomic) AVAudioPlayer *player;
 
 @property NSURL *songUrl;
 @property NSMutableArray *tracks;
-- (IBAction)PlaySong:(id)sender;
 - (IBAction)backToListVC:(id)sender;
+-(void)startProgress;
+
+
 
 @end

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "AEAudioController.h"
+#import <FacebookSDK/FacebookSDK.h>
 
 @interface AppDelegate()
 
@@ -23,6 +24,12 @@
                             initWithAudioDescription:[AEAudioController nonInterleavedFloatStereoAudioDescription]
                             inputEnabled:NO];
     return YES;
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    
+    // Logs 'install' and 'app activate' App Events.
+    [FBAppEvents activateApp];
 }
 
 @end

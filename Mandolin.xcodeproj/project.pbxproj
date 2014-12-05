@@ -11,6 +11,7 @@
 		181D3C771A31AD2D00B62496 /* PlayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 181D3C761A31AD2D00B62496 /* PlayVC.m */; };
 		181D3C7E1A31D67E00B62496 /* TrackCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 181D3C7D1A31D67E00B62496 /* TrackCell.m */; };
 		181D403C1A3205A000B62496 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181D403B1A3205A000B62496 /* FacebookSDK.framework */; };
+		181D40901A3217D300B62496 /* libSTK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 181D408D1A3217C100B62496 /* libSTK.a */; };
 		188D17B61A22C4DB00D4CB1B /* Eight-Note-256.png in Resources */ = {isa = PBXBuildFile; fileRef = 188D17AB1A22C4DB00D4CB1B /* Eight-Note-256.png */; };
 		188D17B71A22C4DB00D4CB1B /* Media-Pause-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 188D17AC1A22C4DB00D4CB1B /* Media-Pause-48.png */; };
 		188D17B81A22C4DB00D4CB1B /* Media-Play-256.png in Resources */ = {isa = PBXBuildFile; fileRef = 188D17AD1A22C4DB00D4CB1B /* Media-Play-256.png */; };
@@ -39,12 +40,24 @@
 		B097DD92186E760B00884E69 /* MandolinTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B097DD91186E760B00884E69 /* MandolinTests.m */; };
 		B097DDA6186E770B00884E69 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B097DDA4186E770B00884E69 /* Accelerate.framework */; };
 		B097DDA7186E770B00884E69 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B097DDA5186E770B00884E69 /* AudioToolbox.framework */; };
-		B0A661EE1927313B0064C7EC /* libSTK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0A661EB192730EC0064C7EC /* libSTK.a */; };
 		B0A661EF1927316F0064C7EC /* libTheAmazingAudioEngine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0A661E2192730A70064C7EC /* libTheAmazingAudioEngine.a */; };
-		B0A661F0192734100064C7EC /* rawwaves.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B0A661ED192730EC0064C7EC /* rawwaves.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		181D408C1A3217C100B62496 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 181D40871A3217C100B62496 /* STK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B0AC5BEE18CB31DE00D860C0;
+			remoteInfo = STK;
+		};
+		181D408E1A3217C100B62496 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 181D40871A3217C100B62496 /* STK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B0EC33B718CB73A70005787B;
+			remoteInfo = rawwaves;
+		};
 		B097DD89186E760B00884E69 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B097DD5B186E760B00884E69 /* Project object */;
@@ -66,20 +79,6 @@
 			remoteGlobalIDString = 4C215CEB1523A7D500D36CAD;
 			remoteInfo = TheAmazingAudioEngine;
 		};
-		B0A661EA192730EC0064C7EC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B0A661E5192730EC0064C7EC /* STK.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = B0AC5BEE18CB31DE00D860C0;
-			remoteInfo = STK;
-		};
-		B0A661EC192730EC0064C7EC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B0A661E5192730EC0064C7EC /* STK.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = B0EC33B718CB73A70005787B;
-			remoteInfo = rawwaves;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -89,51 +88,52 @@
 		181D3C7C1A31D67E00B62496 /* TrackCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackCell.h; sourceTree = "<group>"; };
 		181D3C7D1A31D67E00B62496 /* TrackCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCell.m; sourceTree = "<group>"; };
 		181D403B1A3205A000B62496 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
-		1860849A1A21BE760016950F /* ahh.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = ahh.raw; sourceTree = "<group>"; };
-		1860849B1A21BE760016950F /* bassdrum.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = bassdrum.raw; sourceTree = "<group>"; };
-		1860849C1A21BE760016950F /* britestk.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = britestk.raw; sourceTree = "<group>"; };
-		1860849D1A21BE760016950F /* cowbell1.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = cowbell1.raw; sourceTree = "<group>"; };
-		1860849E1A21BE760016950F /* crashcym.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = crashcym.raw; sourceTree = "<group>"; };
-		1860849F1A21BE760016950F /* dope.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = dope.raw; sourceTree = "<group>"; };
-		186084A01A21BE760016950F /* eee.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = eee.raw; sourceTree = "<group>"; };
-		186084A11A21BE760016950F /* fwavblnk.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = fwavblnk.raw; sourceTree = "<group>"; };
-		186084A21A21BE760016950F /* halfwave.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = halfwave.raw; sourceTree = "<group>"; };
-		186084A31A21BE760016950F /* hihatcym.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = hihatcym.raw; sourceTree = "<group>"; };
-		186084A41A21BE760016950F /* impuls10.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = impuls10.raw; sourceTree = "<group>"; };
-		186084A51A21BE760016950F /* impuls20.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = impuls20.raw; sourceTree = "<group>"; };
-		186084A61A21BE760016950F /* impuls40.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = impuls40.raw; sourceTree = "<group>"; };
-		186084A71A21BE760016950F /* makefunc.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = makefunc.c; sourceTree = "<group>"; };
-		186084A81A21BE760016950F /* makemidi.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = makemidi.c; sourceTree = "<group>"; };
-		186084A91A21BE760016950F /* makewavs.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = makewavs.c; sourceTree = "<group>"; };
-		186084AA1A21BE760016950F /* mand1.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = mand1.raw; sourceTree = "<group>"; };
-		186084AB1A21BE760016950F /* mand10.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = mand10.raw; sourceTree = "<group>"; };
-		186084AC1A21BE760016950F /* mand11.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = mand11.raw; sourceTree = "<group>"; };
-		186084AD1A21BE760016950F /* mand12.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = mand12.raw; sourceTree = "<group>"; };
-		186084AE1A21BE760016950F /* mand2.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = mand2.raw; sourceTree = "<group>"; };
-		186084AF1A21BE760016950F /* mand3.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = mand3.raw; sourceTree = "<group>"; };
-		186084B01A21BE760016950F /* mand4.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = mand4.raw; sourceTree = "<group>"; };
-		186084B11A21BE760016950F /* mand5.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = mand5.raw; sourceTree = "<group>"; };
-		186084B21A21BE760016950F /* mand6.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = mand6.raw; sourceTree = "<group>"; };
-		186084B31A21BE760016950F /* mand7.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = mand7.raw; sourceTree = "<group>"; };
-		186084B41A21BE760016950F /* mand8.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = mand8.raw; sourceTree = "<group>"; };
-		186084B51A21BE760016950F /* mand9.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = mand9.raw; sourceTree = "<group>"; };
-		186084B61A21BE760016950F /* mandpluk.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = mandpluk.raw; sourceTree = "<group>"; };
-		186084B71A21BE760016950F /* marmstk1.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = marmstk1.raw; sourceTree = "<group>"; };
-		186084B81A21BE760016950F /* ooo.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = ooo.raw; sourceTree = "<group>"; };
-		186084B91A21BE760016950F /* peksblnk.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = peksblnk.raw; sourceTree = "<group>"; };
-		186084BA1A21BE760016950F /* ppksblnk.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = ppksblnk.raw; sourceTree = "<group>"; };
-		186084BB1A21BE760016950F /* ridecymb.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = ridecymb.raw; sourceTree = "<group>"; };
-		186084BC1A21BE760016950F /* silence.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = silence.raw; sourceTree = "<group>"; };
-		186084BD1A21BE760016950F /* sine.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = sine.c; sourceTree = "<group>"; };
-		186084BE1A21BE760016950F /* sineblnk.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = sineblnk.raw; sourceTree = "<group>"; };
-		186084BF1A21BE760016950F /* sinewave.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = sinewave.raw; sourceTree = "<group>"; };
-		186084C01A21BE760016950F /* snardrum.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = snardrum.raw; sourceTree = "<group>"; };
-		186084C11A21BE760016950F /* snglpeak.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = snglpeak.raw; sourceTree = "<group>"; };
-		186084C21A21BE760016950F /* tambourn.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = tambourn.raw; sourceTree = "<group>"; };
-		186084C31A21BE760016950F /* tomhidrm.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = tomhidrm.raw; sourceTree = "<group>"; };
-		186084C41A21BE760016950F /* tomlowdr.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = tomlowdr.raw; sourceTree = "<group>"; };
-		186084C51A21BE760016950F /* tommiddr.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = tommiddr.raw; sourceTree = "<group>"; };
-		186084C61A21BE760016950F /* twopeaks.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = twopeaks.raw; sourceTree = "<group>"; };
+		181D40871A3217C100B62496 /* STK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = STK.xcodeproj; path = "Libraries/stk-master/iOS/STK.xcodeproj"; sourceTree = "<group>"; };
+		181D40921A32187800B62496 /* ahh.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = ahh.raw; sourceTree = "<group>"; };
+		181D40931A32187800B62496 /* bassdrum.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = bassdrum.raw; sourceTree = "<group>"; };
+		181D40941A32187800B62496 /* britestk.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = britestk.raw; sourceTree = "<group>"; };
+		181D40951A32187800B62496 /* cowbell1.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = cowbell1.raw; sourceTree = "<group>"; };
+		181D40961A32187800B62496 /* crashcym.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = crashcym.raw; sourceTree = "<group>"; };
+		181D40971A32187800B62496 /* dope.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = dope.raw; sourceTree = "<group>"; };
+		181D40981A32187800B62496 /* eee.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = eee.raw; sourceTree = "<group>"; };
+		181D40991A32187800B62496 /* fwavblnk.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = fwavblnk.raw; sourceTree = "<group>"; };
+		181D409A1A32187800B62496 /* halfwave.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = halfwave.raw; sourceTree = "<group>"; };
+		181D409B1A32187800B62496 /* hihatcym.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = hihatcym.raw; sourceTree = "<group>"; };
+		181D409C1A32187800B62496 /* impuls10.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = impuls10.raw; sourceTree = "<group>"; };
+		181D409D1A32187800B62496 /* impuls20.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = impuls20.raw; sourceTree = "<group>"; };
+		181D409E1A32187800B62496 /* impuls40.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = impuls40.raw; sourceTree = "<group>"; };
+		181D409F1A32187800B62496 /* makefunc.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = makefunc.c; sourceTree = "<group>"; };
+		181D40A01A32187800B62496 /* makemidi.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = makemidi.c; sourceTree = "<group>"; };
+		181D40A11A32187800B62496 /* makewavs.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = makewavs.c; sourceTree = "<group>"; };
+		181D40A21A32187800B62496 /* mand1.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = mand1.raw; sourceTree = "<group>"; };
+		181D40A31A32187800B62496 /* mand10.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = mand10.raw; sourceTree = "<group>"; };
+		181D40A41A32187800B62496 /* mand11.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = mand11.raw; sourceTree = "<group>"; };
+		181D40A51A32187800B62496 /* mand12.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = mand12.raw; sourceTree = "<group>"; };
+		181D40A61A32187800B62496 /* mand2.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = mand2.raw; sourceTree = "<group>"; };
+		181D40A71A32187800B62496 /* mand3.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = mand3.raw; sourceTree = "<group>"; };
+		181D40A81A32187800B62496 /* mand4.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = mand4.raw; sourceTree = "<group>"; };
+		181D40A91A32187800B62496 /* mand5.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = mand5.raw; sourceTree = "<group>"; };
+		181D40AA1A32187800B62496 /* mand6.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = mand6.raw; sourceTree = "<group>"; };
+		181D40AB1A32187800B62496 /* mand7.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = mand7.raw; sourceTree = "<group>"; };
+		181D40AC1A32187800B62496 /* mand8.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = mand8.raw; sourceTree = "<group>"; };
+		181D40AD1A32187800B62496 /* mand9.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = mand9.raw; sourceTree = "<group>"; };
+		181D40AE1A32187800B62496 /* mandpluk.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = mandpluk.raw; sourceTree = "<group>"; };
+		181D40AF1A32187800B62496 /* marmstk1.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = marmstk1.raw; sourceTree = "<group>"; };
+		181D40B01A32187800B62496 /* ooo.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = ooo.raw; sourceTree = "<group>"; };
+		181D40B11A32187800B62496 /* peksblnk.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = peksblnk.raw; sourceTree = "<group>"; };
+		181D40B21A32187800B62496 /* ppksblnk.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = ppksblnk.raw; sourceTree = "<group>"; };
+		181D40B31A32187800B62496 /* ridecymb.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = ridecymb.raw; sourceTree = "<group>"; };
+		181D40B41A32187800B62496 /* silence.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = silence.raw; sourceTree = "<group>"; };
+		181D40B51A32187800B62496 /* sine.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = sine.c; sourceTree = "<group>"; };
+		181D40B61A32187800B62496 /* sineblnk.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = sineblnk.raw; sourceTree = "<group>"; };
+		181D40B71A32187800B62496 /* sinewave.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = sinewave.raw; sourceTree = "<group>"; };
+		181D40B81A32187800B62496 /* snardrum.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = snardrum.raw; sourceTree = "<group>"; };
+		181D40B91A32187800B62496 /* snglpeak.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = snglpeak.raw; sourceTree = "<group>"; };
+		181D40BA1A32187800B62496 /* tambourn.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = tambourn.raw; sourceTree = "<group>"; };
+		181D40BB1A32187800B62496 /* tomhidrm.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = tomhidrm.raw; sourceTree = "<group>"; };
+		181D40BC1A32187800B62496 /* tomlowdr.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = tomlowdr.raw; sourceTree = "<group>"; };
+		181D40BD1A32187800B62496 /* tommiddr.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = tommiddr.raw; sourceTree = "<group>"; };
+		181D40BE1A32187800B62496 /* twopeaks.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = twopeaks.raw; sourceTree = "<group>"; };
 		188D17AB1A22C4DB00D4CB1B /* Eight-Note-256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Eight-Note-256.png"; sourceTree = "<group>"; };
 		188D17AC1A22C4DB00D4CB1B /* Media-Pause-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Media-Pause-48.png"; sourceTree = "<group>"; };
 		188D17AD1A22C4DB00D4CB1B /* Media-Play-256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Media-Play-256.png"; sourceTree = "<group>"; };
@@ -168,7 +168,6 @@
 		B097DDA4186E770B00884E69 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		B097DDA5186E770B00884E69 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		B0A661DD192730A70064C7EC /* TheAmazingAudioEngine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TheAmazingAudioEngine.xcodeproj; path = Libraries/TheAmazingAudioEngine/TheAmazingAudioEngine.xcodeproj; sourceTree = "<group>"; };
-		B0A661E5192730EC0064C7EC /* STK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = STK.xcodeproj; path = Libraries/stk/iOS/STK.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,11 +175,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				181D40901A3217D300B62496 /* libSTK.a in Frameworks */,
 				181D3C6C1A3197E600B62496 /* AVFoundation.framework in Frameworks */,
 				181D403C1A3205A000B62496 /* FacebookSDK.framework in Frameworks */,
 				188D17C41A22CB6D00D4CB1B /* CoreMotion.framework in Frameworks */,
 				B0A661EF1927316F0064C7EC /* libTheAmazingAudioEngine.a in Frameworks */,
-				B0A661EE1927313B0064C7EC /* libSTK.a in Frameworks */,
 				B097DDA6186E770B00884E69 /* Accelerate.framework in Frameworks */,
 				B097DDA7186E770B00884E69 /* AudioToolbox.framework in Frameworks */,
 				B097DD69186E760B00884E69 /* CoreGraphics.framework in Frameworks */,
@@ -202,57 +201,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		186084991A21BE760016950F /* rawwaves */ = {
+		181D40881A3217C100B62496 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1860849A1A21BE760016950F /* ahh.raw */,
-				1860849B1A21BE760016950F /* bassdrum.raw */,
-				1860849C1A21BE760016950F /* britestk.raw */,
-				1860849D1A21BE760016950F /* cowbell1.raw */,
-				1860849E1A21BE760016950F /* crashcym.raw */,
-				1860849F1A21BE760016950F /* dope.raw */,
-				186084A01A21BE760016950F /* eee.raw */,
-				186084A11A21BE760016950F /* fwavblnk.raw */,
-				186084A21A21BE760016950F /* halfwave.raw */,
-				186084A31A21BE760016950F /* hihatcym.raw */,
-				186084A41A21BE760016950F /* impuls10.raw */,
-				186084A51A21BE760016950F /* impuls20.raw */,
-				186084A61A21BE760016950F /* impuls40.raw */,
-				186084A71A21BE760016950F /* makefunc.c */,
-				186084A81A21BE760016950F /* makemidi.c */,
-				186084A91A21BE760016950F /* makewavs.c */,
-				186084AA1A21BE760016950F /* mand1.raw */,
-				186084AB1A21BE760016950F /* mand10.raw */,
-				186084AC1A21BE760016950F /* mand11.raw */,
-				186084AD1A21BE760016950F /* mand12.raw */,
-				186084AE1A21BE760016950F /* mand2.raw */,
-				186084AF1A21BE760016950F /* mand3.raw */,
-				186084B01A21BE760016950F /* mand4.raw */,
-				186084B11A21BE760016950F /* mand5.raw */,
-				186084B21A21BE760016950F /* mand6.raw */,
-				186084B31A21BE760016950F /* mand7.raw */,
-				186084B41A21BE760016950F /* mand8.raw */,
-				186084B51A21BE760016950F /* mand9.raw */,
-				186084B61A21BE760016950F /* mandpluk.raw */,
-				186084B71A21BE760016950F /* marmstk1.raw */,
-				186084B81A21BE760016950F /* ooo.raw */,
-				186084B91A21BE760016950F /* peksblnk.raw */,
-				186084BA1A21BE760016950F /* ppksblnk.raw */,
-				186084BB1A21BE760016950F /* ridecymb.raw */,
-				186084BC1A21BE760016950F /* silence.raw */,
-				186084BD1A21BE760016950F /* sine.c */,
-				186084BE1A21BE760016950F /* sineblnk.raw */,
-				186084BF1A21BE760016950F /* sinewave.raw */,
-				186084C01A21BE760016950F /* snardrum.raw */,
-				186084C11A21BE760016950F /* snglpeak.raw */,
-				186084C21A21BE760016950F /* tambourn.raw */,
-				186084C31A21BE760016950F /* tomhidrm.raw */,
-				186084C41A21BE760016950F /* tomlowdr.raw */,
-				186084C51A21BE760016950F /* tommiddr.raw */,
-				186084C61A21BE760016950F /* twopeaks.raw */,
+				181D408D1A3217C100B62496 /* libSTK.a */,
+				181D408F1A3217C100B62496 /* rawwaves.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		181D40911A32187800B62496 /* rawwaves */ = {
+			isa = PBXGroup;
+			children = (
+				181D40921A32187800B62496 /* ahh.raw */,
+				181D40931A32187800B62496 /* bassdrum.raw */,
+				181D40941A32187800B62496 /* britestk.raw */,
+				181D40951A32187800B62496 /* cowbell1.raw */,
+				181D40961A32187800B62496 /* crashcym.raw */,
+				181D40971A32187800B62496 /* dope.raw */,
+				181D40981A32187800B62496 /* eee.raw */,
+				181D40991A32187800B62496 /* fwavblnk.raw */,
+				181D409A1A32187800B62496 /* halfwave.raw */,
+				181D409B1A32187800B62496 /* hihatcym.raw */,
+				181D409C1A32187800B62496 /* impuls10.raw */,
+				181D409D1A32187800B62496 /* impuls20.raw */,
+				181D409E1A32187800B62496 /* impuls40.raw */,
+				181D409F1A32187800B62496 /* makefunc.c */,
+				181D40A01A32187800B62496 /* makemidi.c */,
+				181D40A11A32187800B62496 /* makewavs.c */,
+				181D40A21A32187800B62496 /* mand1.raw */,
+				181D40A31A32187800B62496 /* mand10.raw */,
+				181D40A41A32187800B62496 /* mand11.raw */,
+				181D40A51A32187800B62496 /* mand12.raw */,
+				181D40A61A32187800B62496 /* mand2.raw */,
+				181D40A71A32187800B62496 /* mand3.raw */,
+				181D40A81A32187800B62496 /* mand4.raw */,
+				181D40A91A32187800B62496 /* mand5.raw */,
+				181D40AA1A32187800B62496 /* mand6.raw */,
+				181D40AB1A32187800B62496 /* mand7.raw */,
+				181D40AC1A32187800B62496 /* mand8.raw */,
+				181D40AD1A32187800B62496 /* mand9.raw */,
+				181D40AE1A32187800B62496 /* mandpluk.raw */,
+				181D40AF1A32187800B62496 /* marmstk1.raw */,
+				181D40B01A32187800B62496 /* ooo.raw */,
+				181D40B11A32187800B62496 /* peksblnk.raw */,
+				181D40B21A32187800B62496 /* ppksblnk.raw */,
+				181D40B31A32187800B62496 /* ridecymb.raw */,
+				181D40B41A32187800B62496 /* silence.raw */,
+				181D40B51A32187800B62496 /* sine.c */,
+				181D40B61A32187800B62496 /* sineblnk.raw */,
+				181D40B71A32187800B62496 /* sinewave.raw */,
+				181D40B81A32187800B62496 /* snardrum.raw */,
+				181D40B91A32187800B62496 /* snglpeak.raw */,
+				181D40BA1A32187800B62496 /* tambourn.raw */,
+				181D40BB1A32187800B62496 /* tomhidrm.raw */,
+				181D40BC1A32187800B62496 /* tomlowdr.raw */,
+				181D40BD1A32187800B62496 /* tommiddr.raw */,
+				181D40BE1A32187800B62496 /* twopeaks.raw */,
 			);
 			name = rawwaves;
-			path = Libraries/stk/rawwaves;
+			path = "Libraries/stk-master/rawwaves";
 			sourceTree = "<group>";
 		};
 		188D17AA1A22C4DB00D4CB1B /* Buttons */ = {
@@ -276,9 +284,9 @@
 		B097DD5A186E760B00884E69 = {
 			isa = PBXGroup;
 			children = (
+				181D40911A32187800B62496 /* rawwaves */,
+				181D40871A3217C100B62496 /* STK.xcodeproj */,
 				188D17AA1A22C4DB00D4CB1B /* Buttons */,
-				186084991A21BE760016950F /* rawwaves */,
-				B0A661E5192730EC0064C7EC /* STK.xcodeproj */,
 				B0A661DD192730A70064C7EC /* TheAmazingAudioEngine.xcodeproj */,
 				B097DD6C186E760B00884E69 /* Mandolin */,
 				B097DD8B186E760B00884E69 /* MandolinTests */,
@@ -367,15 +375,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B0A661E6192730EC0064C7EC /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B0A661EB192730EC0064C7EC /* libSTK.a */,
-				B0A661ED192730EC0064C7EC /* rawwaves.bundle */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -443,8 +442,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = B0A661E6192730EC0064C7EC /* Products */;
-					ProjectRef = B0A661E5192730EC0064C7EC /* STK.xcodeproj */;
+					ProductGroup = 181D40881A3217C100B62496 /* Products */;
+					ProjectRef = 181D40871A3217C100B62496 /* STK.xcodeproj */;
 				},
 				{
 					ProductGroup = B0A661DE192730A70064C7EC /* Products */;
@@ -460,25 +459,25 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		181D408D1A3217C100B62496 /* libSTK.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSTK.a;
+			remoteRef = 181D408C1A3217C100B62496 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		181D408F1A3217C100B62496 /* rawwaves.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = rawwaves.bundle;
+			remoteRef = 181D408E1A3217C100B62496 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		B0A661E2192730A70064C7EC /* libTheAmazingAudioEngine.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libTheAmazingAudioEngine.a;
 			remoteRef = B0A661E1192730A70064C7EC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B0A661EB192730EC0064C7EC /* libSTK.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libSTK.a;
-			remoteRef = B0A661EA192730EC0064C7EC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B0A661ED192730EC0064C7EC /* rawwaves.bundle */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = rawwaves.bundle;
-			remoteRef = B0A661EC192730EC0064C7EC /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -501,7 +500,6 @@
 				188D17B61A22C4DB00D4CB1B /* Eight-Note-256.png in Resources */,
 				188D17C01A22C4DB00D4CB1B /* Tycho_Logo.gif in Resources */,
 				188D17BF1A22C4DB00D4CB1B /* Share-03-32.png in Resources */,
-				B0A661F0192734100064C7EC /* rawwaves.bundle in Resources */,
 				188D17B71A22C4DB00D4CB1B /* Media-Pause-48.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -672,7 +670,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mandolin/Mandolin-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
-					Libraries/stk/include/,
+					"Libraries/stk-master/include",
 					Libraries/TheAmazingAudioEngine/TheAmazingAudioEngine/,
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -696,7 +694,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mandolin/Mandolin-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
-					Libraries/stk/include/,
+					"Libraries/stk-master/include",
 					Libraries/TheAmazingAudioEngine/TheAmazingAudioEngine/,
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,

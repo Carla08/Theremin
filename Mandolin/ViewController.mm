@@ -17,10 +17,12 @@
 //Core Motion:
 #import <CoreMotion/CoreMotion.h>
 //Amazing audio engine and STK instrument (BeeThree) and AVFoundation for recording.
-#import "BeeThree.h"
+#import  "BeeThree.h"
 #import "AEBlockChannel.h"
 #import <AVFoundation/AVFoundation.h>
 #import "PlayVC.h"
+
+#import <FacebookSDK/FacebookSDK.h>
 
 #define degrees(x) (180*x/M_PI)
 // PARA DOS ESCALAS: #define frequency(x) (2.074666*x +261.62)
@@ -193,7 +195,7 @@
     if([segue.identifier isEqualToString:@"PlayVC"]){
         NSLog(@"YEAH BABE");
         PlayVC *playVC=( PlayVC * ) segue.destinationViewController;
-       playVC.songUrl=recorder.url;
+        playVC.songUrl=recorder.url;
         playVC.tracks=tracks;
     }
     

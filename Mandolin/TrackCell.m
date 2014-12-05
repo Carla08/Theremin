@@ -7,15 +7,22 @@
 //
 
 #import "TrackCell.h"
+#import <FacebookSDK/FacebookSDK.h>
+#import <FacebookSDK/FBGraphObject.h>
+
 @interface TrackCell (){
     AVAudioPlayer *player;
+    PlayVC *playVC;
 }
 
 @end
 @implementation TrackCell
 
+
 - (void)awakeFromNib {
     // Initialization code
+    
+    playVC= [[PlayVC alloc]init];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -25,6 +32,7 @@
 }
 
 - (IBAction)play:(id)sender {
+    
     NSLog(@"%@",self.track_name.text);
     NSString *filename = self.track_name.text;
     NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
@@ -40,9 +48,21 @@
     NSLog(@"%@",soundURL);
     player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:nil];
     [player setDelegate:self];
+    playVC.player=player;
     [player play];
+    [playVC startProgress ];
 }
 
+
+
 - (IBAction)share:(id)sender {
+    
+    
+    
+}
+- (void) audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
+    playVC.player=nil;
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Done"message: @"Finish playing the recording!"delegate: nil cancelButtonTitle:@"OK"otherButtonTitles:nil];
+    [alert show];
 }
 @end
